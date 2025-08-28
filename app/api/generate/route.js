@@ -1,3 +1,5 @@
+import clientPromise from "@/lib/mongodb"
+
 export async function POST(request) {
     try {
         const body = await request.json()
@@ -19,7 +21,6 @@ export async function POST(request) {
             success: true,
             error: false,
             message: "URL Generated Successfully",
-            shortUrl: body.shortUrl
         })
     } catch (err) {
         console.error("API Error:", err)

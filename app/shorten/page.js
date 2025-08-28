@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 const Shorten = () => {
     const [longUrl, setLongUrl] = useState("")
@@ -34,12 +35,13 @@ const Shorten = () => {
             .then((result) => {
                 setIsLoading(false)
                 if(result.success){
+                    toast.success("URL Generated Successfully!")
                     setGenerated("true")
                     setLongUrl("")
                     setShortUrl("")
-                    setTempUrl(result.shortUrl)
                 }
                 else{
+                    toast.error("URL not Generated!")
                     setGenerated("false")
                 }
             })
@@ -76,6 +78,7 @@ const Shorten = () => {
                         <div>Sorry, URL {process.env.NEXT_PUBLIC_HOST}/{tempUrl} is already taken by some user</div>
                     </div>
                 </>}
+                <ToastContainer/>
             </div>
         </main>
     )

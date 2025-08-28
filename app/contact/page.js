@@ -4,13 +4,14 @@ import { toast, ToastContainer } from "react-toastify";
 
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", message: "" })
-
-    const handleChange = (e)=>{
-        setForm({...form, [e.target.name]: e.target.value})
+    const [isLoading, setIsLoading] = useState(false)
+    const handleChange = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value })
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const res = await fetch("/api/contact", {
             method: 'POST',
             body: JSON.stringify(form),
@@ -21,6 +22,8 @@ export default function ContactPage() {
         const data = await res.json();
         if (data.success) {
             toast.success("Message sent!")
+            setIsLoading(false)
+            setForm({ name: "", email: "", message: "" })
         }
         else {
             toast.error("Failed to send message.")
@@ -57,10 +60,11 @@ export default function ContactPage() {
                 />
                 <button
                     type="submit"
-                    className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 cursor-pointer"
+                    className="w-full bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 cursor-pointer disabled:cursor-not-allowed disabled:opacity-50 transition duration-200 opacity-100" disabled={isLoading}
                 >
-                    Send Message
+                    {isLoading ? "Sending..." : "Send Message"}
                 </button>
+
             </form>
             <div className="mt-8 text-gray-600">
                 Or reach me directly at: <br />

@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 const Page = async (props)=>{
     const client = await clientPromise
-    const db = client.db("BitLink")
+    const db = client.db("bitlink")
     const collection = db.collection("url")
 
     const params = await props.params

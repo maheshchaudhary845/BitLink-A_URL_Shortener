@@ -4,7 +4,7 @@ export async function POST(request) {
     try {
         const body = await request.json()
         const client = await clientPromise
-        const db = client.db("BitLink")
+        const db = client.db("bitlink")
         const collection = db.collection("url")
 
         const doc = await collection.findOne({ shortUrl: body.shortUrl })

@@ -28,7 +28,7 @@ const Shorten = () => {
             redirect: "follow"
         };
 
-        fetch(`${process.env.NEXT_PUBLIC_URL}/api/generate/`, requestOptions)
+        fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate/`, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 setIsLoading(false)
@@ -58,7 +58,7 @@ const Shorten = () => {
                     <div>
                         <label htmlFor="shorturl" className="block text-gray-700 mb-1">Custom Short URL</label>
                         <div className="flex">
-                            <span className="inline-flex items-center px-3 text-gray-500 rounded-l-lg border-r-0 border border-gray-300 shadow-sm">{process.env.NEXT_PUBLIC_URL}/</span>
+                            <span className="inline-flex items-center px-3 text-gray-500 rounded-l-lg border-r-0 border border-gray-300 shadow-sm">{process.env.NEXT_PUBLIC_HOST}/</span>
                             <input type="text" id="shorturl" value={shortUrl} required onChange={(e) => { setShortUrl(e.target.value) }} placeholder="short-url" className="w-full px-4 py-3 border border-gray-300 rounded-r-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 " />
                         </div>
                     </div>
@@ -66,12 +66,12 @@ const Shorten = () => {
                 </form>
                 {generated==="true" && <>
                     <div className="flex justify-center items-center bg-sky-200 rounded-xl p-5 mt-4">
-                        <div>Your Short URL is <Link href={`${process.env.NEXT_PUBLIC_URL}/${tempUrl}`} target="_blank" className="text-blue-700">{process.env.NEXT_PUBLIC_URL}/{tempUrl}</Link></div>
+                        <div>Your Short URL is <Link href={`${process.env.NEXT_PUBLIC_HOST}/${tempUrl}`} target="_blank" className="text-blue-700">{process.env.NEXT_PUBLIC_HOST}/{tempUrl}</Link></div>
                     </div>
                 </>}
                 {generated==="false" && <>
                     <div className="flex justify-center items-center bg-red-200 rounded-xl p-5 mt-4">
-                        <div>Sorry, URL {process.env.NEXT_PUBLIC_URL}/{tempUrl} is already taken by some user</div>
+                        <div>Sorry, URL {process.env.NEXT_PUBLIC_HOST}/{tempUrl} is already taken by some user</div>
                     </div>
                 </>}
             </div>

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const path = usePathname()
-    console.log(path)
 
     return (
         <header className="bg-white border-b border-gray-200">
@@ -24,13 +23,13 @@ export default function Navbar() {
                         <Link href="/" className="text-gray-700 hover:text-blue-600 transition">
                             Home
                         </Link>
-                        <Link href="#features" className="text-gray-700 hover:text-blue-600 transition">
+                        <Link href="/features" className="text-gray-700 hover:text-blue-600 transition">
                             Features
                         </Link>
-                        <Link href="#about" className="text-gray-700 hover:text-blue-600 transition">
+                        <Link href="/about" className="text-gray-700 hover:text-blue-600 transition">
                             About
                         </Link>
-                        <Link href="#contact" className="text-gray-700 hover:text-blue-600 transition">
+                        <Link href="/contact" className="text-gray-700 hover:text-blue-600 transition">
                             Contact
                         </Link>
                     </nav>
@@ -82,13 +81,13 @@ export default function Navbar() {
                     <Link href="/" className="block text-gray-700 hover:text-blue-600 transition pt-2">
                         Home
                     </Link>
-                    <Link href="#features" className="block text-gray-700 hover:text-blue-600 transition">
+                    <Link href="/features" className="block text-gray-700 hover:text-blue-600 transition">
                         Features
                     </Link>
-                    <Link href="#about" className="block text-gray-700 hover:text-blue-600 transition">
+                    <Link href="/about" className="block text-gray-700 hover:text-blue-600 transition">
                         About
                     </Link>
-                    <Link href="#contact" className="block text-gray-700 hover:text-blue-600 transition pb-2">
+                    <Link href="/contact" className="block text-gray-700 hover:text-blue-600 transition pb-2">
                         Contact
                     </Link>
                     {!path.includes("/shorten") && <Link

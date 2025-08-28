@@ -9,7 +9,8 @@ const Shorten = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [tempUrl, setTempUrl] = useState("")
 
-    const generate = async () => {
+    const generate = async (e) => {
+        e.preventDefault();
         setIsLoading(true)
         setTempUrl(shortUrl)
 
@@ -32,10 +33,11 @@ const Shorten = () => {
             .then((response) => response.json())
             .then((result) => {
                 setIsLoading(false)
-                if(result.success === true){
+                if(result.success){
                     setGenerated("true")
                     setLongUrl("")
                     setShortUrl("")
+                    setTempUrl(result.shortUrl)
                 }
                 else{
                     setGenerated("false")
@@ -50,7 +52,7 @@ const Shorten = () => {
                     <h1 className="text-2xl font-bold text-center">Shorten Your Link</h1>
                     <p className="text-gray-700 text-center">Paste your long URL and get a custom short link instantly.</p>
                 </div>
-                <form action={generate} className="space-y-6">
+                <form onSubmit={generate} className="space-y-6">
                     <div>
                         <label htmlFor="longurl" className="block text-gray-700 mb-1">Long URL</label>
                         <input type="url" id="longurl" required value={longUrl} onChange={(e) => { setLongUrl(e.target.value) }} placeholder="https://www.example.com/very/long/url" className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" />

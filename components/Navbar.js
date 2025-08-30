@@ -65,7 +65,7 @@ export default function Navbar() {
                                 </Link>
                             </div>
                         }
-                        <div className={`fixed inset-0 z-0 backdrop-blur-[0.5px] bg-black/5 transition-opacity duration-200 ${showDropdown ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+                        <div className={`fixed inset-0 z-0 backdrop-blur-[0.7px] bg-black/5 transition-opacity duration-200 ${showDropdown ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                         </div>
                         {session &&
                             <div className="md:flex gap-2" ref={dropdownRef}>
@@ -93,12 +93,12 @@ export default function Navbar() {
                                             </svg>
                                         </div>
                                     </div>
-                                    <div className="separator bg-gray-700 h-[1px] w-full my-4"></div>
+                                    <div className="separator bg-gray-300 h-[1px] w-full my-4"></div>
                                     <ul className="text-sm">
-                                        <li><Link href="/profile" onClick={() => setShowDropdown(false)} className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#8D8D8D" fill="none">
-                                            <path d="M17 8.5C17 5.73858 14.7614 3.5 12 3.5C9.23858 3.5 7 5.73858 7 8.5C7 11.2614 9.23858 13.5 12 13.5C14.7614 13.5 17 11.2614 17 8.5Z" stroke="#8D8D8D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                            <path d="M19 20.5C19 16.634 15.866 13.5 12 13.5C8.13401 13.5 5 16.634 5 20.5" stroke="#8D8D8D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
-                                        </svg>Your Profile</Link></li>
+                                        <li><Link href="/shorten" onClick={() => setShowDropdown(false)} className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" color="#8D8D8D" fill="none">
+                                            <path d="M9.14339 10.691L9.35031 10.4841C11.329 8.50532 14.5372 8.50532 16.5159 10.4841C18.4947 12.4628 18.4947 15.671 16.5159 17.6497L13.6497 20.5159C11.671 22.4947 8.46279 22.4947 6.48405 20.5159C4.50532 18.5372 4.50532 15.329 6.48405 13.3503L6.9484 12.886" stroke="#8D8D8D" strokeWidth="2" strokeLinecap="round" />
+                                            <path d="M17.0516 11.114L17.5159 10.6497C19.4947 8.67095 19.4947 5.46279 17.5159 3.48405C15.5372 1.50532 12.329 1.50532 10.3503 3.48405L7.48405 6.35031C5.50532 8.32904 5.50532 11.5372 7.48405 13.5159C9.46279 15.4947 12.671 15.4947 14.6497 13.5159L14.8566 13.309" stroke="#8D8D8D" strokeWidth="2" strokeLinecap="round" />
+                                        </svg>Generate</Link></li>
                                         <li><Link href="/dashboard" onClick={() => setShowDropdown(false)} className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={16} height={16} color={"#8D8D8D"} fill={"none"}>
                                                 <path d="M2.5 12C2.5 7.52167 2.5 5.2825 3.89124 3.89126C5.28249 2.50002 7.52166 2.50002 12 2.50002C16.4783 2.50002 18.7175 2.50002 20.1088 3.89126C21.5 5.2825 21.5 7.52167 21.5 12C21.5 16.4784 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4784 2.5 12Z" stroke="#8D8D8D" strokeWidth="2"></path>

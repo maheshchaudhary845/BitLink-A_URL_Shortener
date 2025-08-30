@@ -1,6 +1,11 @@
 import { QRCodeSVG } from "qrcode.react";
 
 const Dashboard = ({ links }) => {
+  new Date(link.createdAt).toLocaleString("en-IN", {
+  timeZone: "Asia/Kolkata",
+  dateStyle: "medium",
+  timeStyle: "short",
+})
   return (
     <main className="min-h-screen p-4">
       <section className="max-w-6xl mx-auto">

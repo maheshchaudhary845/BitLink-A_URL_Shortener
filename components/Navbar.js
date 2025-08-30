@@ -15,7 +15,6 @@ export default function Navbar() {
 
     useEffect(() => {
         setHasMounted(true);
-        document.body.style.overflowX = "hidden";
         function handleClickOutside(event) {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setShowDropdown(false)
@@ -72,7 +71,7 @@ export default function Navbar() {
                                 <div onClick={() => setShowDropdown(!showDropdown)} className="relative w-10 h-10 rounded-full overflow-hidden cursor-pointer">
                                     <Image src={session.user.image} fill alt="profile img" />
                                 </div>
-                                {hasMounted && <div className={`absolute z-10 top-0 right-0 ${showDropdown ? "translate-x-0 opacity-100 pointer-events-auto" : "translate-x-full opacity-0 pointer-events-none"} transition-all duration-200 ease-in min-w-80 flex flex-col bg-white p-4 shadow-lg rounded-lg`}>
+                                {hasMounted && <div className={`absolute z-10 top-0 right-0 ${showDropdown ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"} transition-all duration-200 ease-in min-w-80 flex flex-col bg-white p-4 shadow-lg rounded-lg`}>
                                     <div className="flex gap-3 items-center">
                                         <div className="relative w-10 h-10 rounded-full overflow-hidden cursor-pointer">
                                             <Image src={session.user.image} fill alt="profile img" />

@@ -20,7 +20,7 @@ export default function FeaturesPage() {
 
   return (
     <main className="max-w-3xl mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold mb-8">Features</h1>
+      <h1 className="text-4xl font-bold mb-8 text-cyan-800">Features</h1>
       <div className="space-y-6">
         {features.map((feature, index) => (
           <div key={index} className="border p-4 rounded-lg shadow-sm">

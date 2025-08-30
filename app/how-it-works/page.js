@@ -5,7 +5,7 @@ export default function HowItWorks() {
         <main>
             <section className="bg-white py-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                    <h1 className="text-4xl font-bold text-cyan-800 mb-4">
                         How BitLink Works
                     </h1>
                     <p className="text-lg text-gray-600 mb-12">

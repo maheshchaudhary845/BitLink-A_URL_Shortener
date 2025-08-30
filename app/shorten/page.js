@@ -1,7 +1,9 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Shorten = () => {
     const [longUrl, setLongUrl] = useState("")
@@ -9,6 +11,14 @@ const Shorten = () => {
     const [generated, setGenerated] = useState("")
     const [isLoading, setIsLoading] = useState(false)
     const [tempUrl, setTempUrl] = useState("")
+    const {data: session} = useSession()
+    const router = useRouter()
+
+    useEffect(()=>{
+        if(!session){
+            router.push("/login")
+        }
+    }, [session, router])
 
     const generate = async (e) => {
         e.preventDefault();

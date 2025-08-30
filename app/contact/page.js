@@ -33,7 +33,7 @@ export default function ContactPage() {
     return (
         <main className="max-w-xl mx-auto px-6 py-12">
             <ToastContainer />
-            <h1 className="text-4xl font-bold mb-6">Contact</h1>
+            <h1 className="text-4xl font-bold mb-6 text-cyan-800">Contact</h1>
             <form className="space-y-4" onSubmit={handleSubmit}>
                 <input
                     value={form.name}

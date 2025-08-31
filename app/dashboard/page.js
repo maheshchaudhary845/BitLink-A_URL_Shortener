@@ -125,7 +125,7 @@ export default function DashboardPage() {
                     <td className="px-4 py-3 break-words text-gray-700">{link.longUrl}</td>
                     <td className="px-4 py-3 text-blue-600 break-words">
                       <Link
-                        href={`api/r/${link.shortUrl}`}
+                        href={`${process.env.NEXT_PUBLIC_HOST}/api/r/${link.shortUrl}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline"
@@ -143,7 +143,7 @@ export default function DashboardPage() {
                     <td className="px-4 py-3 whitespace-nowrap text-gray-700">{link.clicks || 0}</td>
                     <td className="px-4 py-3 text-center">
                       <QRCodeSVG
-                        value={`api/r/${link.shortUrl}`}
+                        value={`${process.env.NEXT_PUBLIC_HOST}/api/r/${link.shortUrl}`}
                         size={qrSize}
                         bgColor="#ffffff"
                         fgColor="#000000"
